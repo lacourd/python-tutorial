@@ -1,8 +1,20 @@
 name = "Dave"
-
-def greeting():
-    print(name)
+count = 1
 
 
+def another():
+    color = "blue"
+    global count
+    count += 1
+    print(count)
 
-greeting()
+    def greeting(name):
+        nonlocal color
+        color = "red"
+        print(color)
+        print(name)
+    print(color)
+    greeting("Dave")
+
+
+another()

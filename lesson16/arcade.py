@@ -19,9 +19,9 @@ def arcade(name='PlayerOne'):
         player = int(playerchoice)
 
         if (player == 1):
-            return rps(name)
+            return rps.rps(name)
         elif (player == 2):
-            return guess_number(name)
+            return guess_number.guess_number(name)
         else:
             print("See you next time!\n")
             sys.exit(f"Bye, {name}! 👋🏼")

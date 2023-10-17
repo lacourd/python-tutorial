@@ -2,31 +2,33 @@ from guess_number import guess_number
 from rps import rps
 import sys
 
-def arcade(name='PlayerOne'):
-    game_count = 0
-    player_wins = 0
+def play_game(name='PlayerOne'):
+    welcome_back = False
 
-    def choose_game():
-        nonlocal name
+    while True:
+        if (welcome_back == True):
+            print(f"\n{name}, welcome back to the Arcade menu.")
 
-        playerchoice = input(
-            f'\n{name}, welcome to the arcade!\n\nPlease chooce a game:\n1 = Rock Paper Scissors\n2 = Guess My Number\n\nOr press "x" to exit the Arcade')
+            playerchoice = input(
+            f"\n{name}, welcome to the arcade!\n\nPlease chooce a game:\n1 = Rock Paper Scissors\n2 = Guess My Number\n\nOr press \"x\" to exit the Arcade\n\n")
 
         if playerchoice not in ["1", "2", "x"]:
             print(f"{name}, please enter 1, 2, or x.")
-            return choose_game()
+            return play_game(name)
+
+        welcome_back = True
 
         player = int(playerchoice)
 
-        if (player == 1):
-            rps.rps(name)
-        elif (player == 2):
-            return guess_number.guess_number(name)
+        if (playerchoice == "1"):
+            rock_paper_scissors = rps(name)
+            rock_paper_scissors()
+        elif (playerchoice == "2"):
+            guess_my_number = guess_number(name)
+            guess_my_number()
         else:
-            print("See you next time!\n")
+            print("\nSee you next time!\n")
             sys.exit(f"Bye, {name}! 👋🏼")
-
-    return choose_game
 
 
 if __name__ == "__main__":
@@ -43,5 +45,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    arcade = arcade(args.name)
-    arcade()
+    print(f"\n{args.name}, welcome to the Arcade! 👾")
+
+    play_game(args.name)
+   

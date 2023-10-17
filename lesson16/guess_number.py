@@ -17,14 +17,14 @@ def guess_number(name='PlayerOne'):
             print(f"{name}, please enter 1, 2, or 3.")
             return play_guess_number()
 
-        player = int(playerchoice)
-
         computerchoice = random.choice("123")
-
-        computer = int(computerchoice)
 
         print(f"\n{name}, you chose {playerchoice}.")
         print(f"I was thinking about {computerchoice}.\n")
+
+        player = int(playerchoice)
+
+        computer = int(computerchoice)
 
         def decide_winner(player, computer):
             nonlocal name
@@ -60,7 +60,10 @@ def guess_number(name='PlayerOne'):
         else:
             print("\n🎉🎉🎉🎉")
             print("Thank you for playing!\n")
-            sys.exit(f"Bye, {name}! 👋🏼")
+            if __name__ == "__main__":
+                sys.exit(f"Bye, {name}! 👋🏼")
+            else:
+                return
 
     return play_guess_number
 

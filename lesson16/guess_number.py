@@ -82,5 +82,5 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    guess_number = guess_number(args.name)
-    guess_number()
+    guess_my_number = guess_number(args.name)
+    guess_my_number()

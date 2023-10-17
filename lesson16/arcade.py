@@ -1,5 +1,5 @@
-import guess_number
-import rps
+from guess_number import guess_number
+from rps import rps
 import sys
 
 def arcade(name='PlayerOne'):
@@ -19,7 +19,7 @@ def arcade(name='PlayerOne'):
         player = int(playerchoice)
 
         if (player == 1):
-            return rps.rps(name)
+            rps.rps(name)
         elif (player == 2):
             return guess_number.guess_number(name)
         else:

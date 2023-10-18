@@ -21,3 +21,13 @@ Jim.getBalance()
 Jim.deposit(100)
 
 Jim.transfer(100, Dave)
+
+Blaze = SavingsAcct(1000, "Blaze")
+
+Blaze.getBalance()
+
+Blaze.deposit(100)
+
+Blaze.transfer(10000, Sara)
+Blaze.transfer(1000, Sara)
+
